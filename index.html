@@ -33,6 +33,23 @@
     }
   </style>
 </head>
+  <script>
+  const searchInput = document.getElementById("searchInput");
+  const videoItems = document.querySelectorAll(".video-item");
+
+  searchInput.addEventListener("input", function () {
+    const keyword = searchInput.value.toLowerCase();
+
+    videoItems.forEach((item) => {
+      const filename = item.getAttribute("data-title").toLowerCase();
+      if (filename.includes(keyword)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+  </script>
 <body>
   <div style="position: absolute; top: 20px; right: 20px;">
   <a href="register.html">
@@ -117,15 +134,15 @@
   </div>
 </section>
 
-<section style="padding: 40px;">
-  <h2 style="color: white; font-size: 24px; text-align: center;">🎬 Video Terbaru</h2>
-  <video controls width="100%" style="border-radius: 12px; margin-top: 20px;">
-    <source src="andiniputri.mp4" type="video/mp4">
-    Maaf, browser Anda tidak mendukung video.
-  </video>
-  <p style="color: white; margin-top: 8px;">andini putri dan adiknya bernama KENTON </strong></p>
-</section>
+<input type="text" id="searchInput" placeholder="Cari video..." />
 
+<div class="video-item" data-title="andiniputri.mp4">
+  <p class="video-title">andiniputri.mp4</p>
+  <video width="100%" controls>
+    <source src="andiniputri.mp4" type="video/mp4" />
+    Browser tidak mendukung video.
+  </video>
+</div>
   <!-- Konten lainnya -->
 </body>
       </section>
