@@ -29,12 +29,39 @@
       <section class="hero">
 <h2>Streaming Tanpa Batas</h2>
 <p>Platform streaming gratis dengan tampilan keren dan elegan.</p>
-<div class="search-container">
-  <input type="text" placeholder="Cari film atau acara..." />
-<input type="text" id="searchInput" placeholder="Cari video..." style="padding: 8px; width: 200px;">
-<button onclick="searchVideo()" style="padding: 8px;">Cari</button>
-      </section>
 <body>
+  <!-- Search Bar -->
+  <div style="text-align: center; margin-top: 30px;">
+    <input type="text" id="searchInput" placeholder="Cari video..." oninput="searchVideo()" style="padding: 10px; width: 250px;">
+  </div>
+
+  <!-- Video List -->
+  <div class="video-item">
+    <p class="video-title">andiniputri.mp4</p>
+    <video controls width="100%">
+      <source src="andiniputri.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Tambah video-item lain di sini -->
+
+  <!-- Script -->
+  <script>
+    function searchVideo() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const videos = document.querySelectorAll('.video-item');
+
+      videos.forEach(video => {
+        const title = video.querySelector('.video-title').textContent.toLowerCase();
+        if (title.includes(input)) {
+          video.style.display = 'block';
+        } else {
+          video.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
   <!-- Konten lainnya -->
 
 <section style="padding: 40px;">
