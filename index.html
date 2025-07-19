@@ -30,39 +30,36 @@
 <h2>Streaming Tanpa Batas</h2>
 <p>Platform streaming gratis dengan tampilan keren dan elegan.</p>
 <body>
+<!-- Search dan Video List -->
+<section style="text-align: center; margin-top: 40px;">
+  <h2 style="color: white;">Streaming Tanpa Batas</h2>
+  <p style="color: #ccc;">Platform streaming gratis dengan tampilan keren dan elegan.</p>
+
   <!-- Search Bar -->
-  <div style="text-align: center; margin-top: 30px;">
-    <input type="text" id="searchInput" placeholder="Cari video..." oninput="searchVideo()" style="padding: 10px; width: 250px;">
-  </div>
+  <input type="text" id="searchInput" placeholder="Cari video..." 
+         style="padding: 10px; width: 80%; max-width: 400px; border-radius: 8px; border: none; margin: 20px 0;">
 
   <!-- Video List -->
-  <div class="video-item">
-    <p class="video-title">andiniputri.mp4</p>
-    <video controls width="100%">
-      <source src="andiniputri.mp4" type="video/mp4">
-    </video>
+  <div id="videoContainer">
+    <div class="video-item">
+      <p class="video-title" style="color: white;">andiniputri.mp4</p>
+      <video controls width="80%">
+        <source src="andiniputri.mp4" type="video/mp4">
+        Browser tidak mendukung video.
+      </video>
+    </div>
+    
+    <!-- Tambahkan video lain seperti ini jika perlu -->
+    <!--
+    <div class="video-item">
+      <p class="video-title" style="color: white;">video2.mp4</p>
+      <video controls width="80%">
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+    </div>
+    -->
   </div>
-
-  <!-- Tambah video-item lain di sini -->
-
-  <!-- Script -->
-  <script>
-    function searchVideo() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const videos = document.querySelectorAll('.video-item');
-
-      videos.forEach(video => {
-        const title = video.querySelector('.video-title').textContent.toLowerCase();
-        if (title.includes(input)) {
-          video.style.display = 'block';
-        } else {
-          video.style.display = 'none';
-        }
-      });
-    }
-  </script>
-</body>
-  <!-- Konten lainnya -->
+</section>
 
 <section style="padding: 40px;">
   <h2 style="color: white; font-size: 24px; text-align: center;">🎬 Video Terbaru</h2>
