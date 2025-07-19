@@ -5,33 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KENTONstream</title>
 
-  <!-- CSS langsung -->
-  <style>
-    body {
-      background-color: #111;
-      font-family: sans-serif;
-    }
+<style>
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
 
-    .video-item {
-      display: none;
-      margin-bottom: 40px;
-    }
+  .video-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
 
-    input[type="text"] {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      margin: 20px 0;
-    }
+  .video-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 
-    .video-title {
-      color: white;
-      text-align: center;
-      margin-top: 10px;
-    }
-  </style>
+  /* Popup (lightbox) style */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup video {
+    width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+  }
+</style>
 </head>
 <body>
   <div style="position: absolute; top: 20px; right: 20px;">
@@ -75,6 +88,38 @@
   <title>KENTON</title>
   <link rel="stylesheet" href="style.css">
 </head>
+        <div class="video-grid">
+  <div class="video-item" onclick="openPopup('andiniputri.mp4')">
+    <video muted>
+      <source src="andiniputri.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <!-- Tambahkan video lainnya di sini -->
+</div>
+
+<!-- Popup video -->
+<div class="popup" id="popup" onclick="closePopup()">
+  <video id="popupVideo" controls autoplay></video>
+</div>
+        <script>
+  function openPopup(src) {
+    const popup = document.getElementById("popup");
+    const popupVideo = document.getElementById("popupVideo");
+
+    popup.style.display = "flex";
+    popupVideo.src = src;
+    popupVideo.play();
+  }
+
+  function closePopup() {
+    const popup = document.getElementById("popup");
+    const popupVideo = document.getElementById("popupVideo");
+
+    popup.style.display = "none";
+    popupVideo.pause();
+    popupVideo.src = "";
+  }
+</script>
 <body>
   <div style="position: absolute; top: 20px; right: 20px;">
   <a href="register.html">
