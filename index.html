@@ -1,6 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KENTONstream</title>
+
+  <!-- CSS langsung -->
+  <style>
+    body {
+      background-color: #111;
+      font-family: sans-serif;
+    }
+
+    .video-item {
+      display: none;
+      margin-bottom: 40px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      margin: 20px 0;
+    }
+
+    .video-title {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: absolute; top: 20px; right: 20px;">
+  <a href="register.html">
+    <button style="padding: 6px 12px; font-size: 14px; background-color: orange; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Daftar Akun
+    </button>
+  </a>
+</div>
+  <div class="container fade-in">
+    <header>
+      <h1>🎬  KENTONstream</h1>
+      
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="kategori.html">Kategori</a>
+        <a href="tentang.html">Tentang</a>
+      </nav>
+    </header>
+
+    <main>
+<!-- Konten utama -->
+<section style="text-align: center; margin-top: 40px;">
+  <h2 style="color: white;">Streaming Tanpa Batas</h2>
+  <p style="color: #ccc;">Platform streaming gratis dengan tampilan keren dan elegan.</p>
+
+  <!-- Search Bar -->
+  <input type="text" id="searchInput" placeholder="Cari video..." 
+         style="padding: 10px; width: 80%; max-width: 400px; border-radius: 8px; border: none; margin: 20px 0;">
+
+  <!-- Video List -->
+  <div id="videoContainer">
+    <div class="video-item">
+      <p class="video-title" style="color: white;">andiniputri.mp4</p>
+      <video controls width="80%">
+        <source src="andiniputri.mp4" type="vid<!DOCTYPE html>
+<html lang="id">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KENTON</title>
@@ -41,6 +110,7 @@
       <p class="video-title" style="color: white;">andiniputri.mp4</p>
       <video controls width="80%">
         <source src="andiniputri.mp4" type="video/mp4">
+        Browser tidak mendukung video.eo/mp4">
         Browser tidak mendukung video.
       </video>
     </div>
