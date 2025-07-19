@@ -119,32 +119,6 @@
     popupVideo.pause();
     popupVideo.src = "";
   }
-</script>
-<body>
-  <div style="position: absolute; top: 20px; right: 20px;">
-  <a href="register.html">
-    <button style="padding: 6px 12px; font-size: 14px; background-color: orange; color: white; border: none; border-radius: 4px; cursor: pointer;">
-      Daftar Akun
-    </button>
-  </a>
-</div>
-  <div class="container fade-in">
-    <header>
-      <h1>🎬  KENTONstream</h1>
-      
-      <nav>
-        <a href="index.html">Beranda</a>
-        <a href="kategori.html">Kategori</a>
-        <a href="tentang.html">Tentang</a>
-      </nav>
-    </header>
-
-    <main>
-<!-- Konten utama -->
-<section style="text-align: center; margin-top: 40px;">
-  <h2 style="color: white;">Streaming Tanpa Batas</h2>
-  <p style="color: #ccc;">Platform streaming gratis dengan tampilan keren dan elegan.</p>
-
   <!-- Search Bar -->
   <input type="text" id="searchInput" placeholder="Cari video..." 
          style="padding: 10px; width: 80%; max-width: 400px; border-radius: 8px; border: none; margin: 20px 0;">
@@ -182,20 +156,3 @@
   </div>
 </body>
 </html>
-          <script>
-  const searchInput = document.getElementById("searchInput");
-  const videoItems = document.querySelectorAll(".video-item");
-
-  searchInput.addEventListener("input", function () {
-    const keyword = searchInput.value.toLowerCase();
-
-    videoItems.forEach((item) => {
-      const filename = item.getAttribute("data-title").toLowerCase();
-      if (filename.includes(keyword)) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  });
-  </script>
